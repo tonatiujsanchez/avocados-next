@@ -1,16 +1,38 @@
+import { useEffect, useState } from "react"
 import { Navbar } from "../components/Navbar"
 
-
+import axios from 'axios'
 const HomePage = () => {
-  return (
-    <div>
-        <Navbar />
-        <h1>Hola mundo!</h1>
-    </div>
-  )
+
+    const [productList, setProductList] = useState<TProduct[]>([])
+
+    const getAvos = async() => {
+        const { data } = await axios.get('/api/avo')
+        setProductList(data.entries)
+        
+    }
+
+    useEffect(()=>{
+        getAvos()
+    },[])
+
+    return (
+        <div>
+            <Navbar />
+            <h1>Hola mundo!</h1>
+
+                {
+                    productList.map( product => (
+                        <div key={product.id}>{ product.name }</div>
+                    ))
+                }
+        </div>
+    )
 }
 
 export default HomePage
+
+
 
 
 // Solucion al autocompletado con archivos JS
