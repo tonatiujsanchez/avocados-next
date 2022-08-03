@@ -1,5 +1,6 @@
 import { FC, ReactNode } from "react"
-import { Navbar } from "@components/Navbar"
+import { Navbar } from "@components/ui/Navbar"
+import { Footer } from "@components/ui/Footer"
 
 interface Props {
     children?: ReactNode
@@ -11,10 +12,11 @@ export const Layout:FC<Props> = ({children}) => {
         <Navbar />
 
         { children }
-        <footer className="container">This is teh footer</footer>
+        
+        <Footer />
 
         <style jsx>{`
-            .container {
+            .bg-salmon {
                 background: salmon
             }
 

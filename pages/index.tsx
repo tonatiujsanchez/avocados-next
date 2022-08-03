@@ -1,28 +1,19 @@
-import { useEffect, useState } from "react"
+import { ProductList } from "@components/product/ProductList"
+import { Avocado } from '@components/SVG'
 
-import axios from 'axios'
+import { useProduct } from "hooks/useProduct"
+
+
 const HomePage = () => {
 
-    const [productList, setProductList] = useState<TProduct[]>([])
-
-    const getAvos = async() => {
-        const { data } = await axios.get('/api/avo')
-        setProductList(data.entries)
-        
-    }
-
-    useEffect(()=>{
-        getAvos()
-    },[])
+    const { products } = useProduct()
 
     return (
-        <div>
-            <h1 className="text-6xl">Hola mundo!</h1>
-                {
-                    productList.map( product => (
-                        <div key={product.id}>{ product.name } - { product.id } </div>
-                    ))
-                }
+        <div className="container">
+            <h1 className="text-4xl font-semibold flex justify-center my-12">Avo <Avocado /> Store</h1>
+            <div>
+                <ProductList productList={products} />
+            </div>
         </div>
     )
 }
