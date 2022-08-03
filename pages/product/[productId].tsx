@@ -9,12 +9,14 @@ const ProductPage = () => {
     
     const getAvo = async() => {
         const { data } = await axios.get(`/api/avo/${productId}`)
-        console.log(data);        
+        console.log(data.entrie);        
     }
 
     useEffect(() => {
-        getAvo()
-    }, [])
+        if(productId){
+            getAvo()
+        }
+    }, [productId])
     
 
     return (

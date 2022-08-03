@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react"
-import { Navbar } from "../components/Navbar"
 
 import axios from 'axios'
 const HomePage = () => {
@@ -18,12 +17,10 @@ const HomePage = () => {
 
     return (
         <div>
-            <Navbar />
-            <h1>Hola mundo!</h1>
-
+            <h1 className="text-6xl">Hola mundo!</h1>
                 {
                     productList.map( product => (
-                        <div key={product.id}>{ product.name }</div>
+                        <div key={product.id}>{ product.name } - { product.id } </div>
                     ))
                 }
         </div>
