@@ -1,6 +1,6 @@
 import type { AppProps } from 'next/app'
 
-import { Layout } from '../components/layouts/Layout';
+import { Layout } from '../components/Layouts/Layout';
 
 import { ProductsProvider } from '../context/product/ProductsProvider';
 import { CartProvider } from 'context/cart/CartProvider';
