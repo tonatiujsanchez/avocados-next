@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .container {
-    max-width: 940px;
+    max-width: 740px;
     margin: 0 auto;
     @apply px-4;
 }
@@ -20,7 +20,7 @@
     width: 0.57142857em;
     height: 0.57142857em;
     border: 1px solid #d4d4d5;
-    @apply bg-slate-100;
+    @apply bg-white;
     border-top: none;
     border-left: none;
     z-index: 1000;

@@ -32,3 +32,14 @@ type TAPIAvoResponse = {
   data: TProduct[]
   error?: string
 }
+
+
+type TProductCart = {
+  id: TProductId
+  name: string
+  sku: string
+  price: number
+  image: Url
+  attributes: TProductAttributes
+  quantity: number
+}

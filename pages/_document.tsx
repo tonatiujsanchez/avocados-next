@@ -11,7 +11,7 @@ class MyDocument extends Document {
                     {/* stylesheet */}
                     {/* script / js */}
                 </Head>
-                <body className='bg-slate-100'>
+                <body className='text-slate-800'>
                     <Main />
                     <NextScript />
                 </body>

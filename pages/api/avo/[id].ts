@@ -2,7 +2,7 @@ import type { NextApiRequest, NextApiResponse } from 'next'
 import Database from '../../../database/db'
 
 type Data = {
-    entrie: TProduct | null
+    entry: TProduct | null
 }
 
 export default async function getAvo(req: NextApiRequest, res: NextApiResponse<Data>) {
@@ -10,7 +10,7 @@ export default async function getAvo(req: NextApiRequest, res: NextApiResponse<D
     
     const { id } = req.query 
     
-    const entrie:TProduct = await db.getById( id as string )
+    const entry:TProduct = await db.getById( id as string )
 
-    res.status(200).json({ entrie })
+    res.status(200).json({ entry })
 }
