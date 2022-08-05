@@ -7,6 +7,14 @@ import { CartProvider } from 'context/cart/CartProvider';
 
 import '../styles/globals.css'
 
+
+export function reportWebVitals(metric) {
+    console.log(metric);
+    // serverAnalytics.log(metric)
+}
+
+
+
 export default function MyApp({ Component, pageProps }: AppProps): JSX.Element {
     return (
         <CartProvider>
